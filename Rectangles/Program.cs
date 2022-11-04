@@ -9,30 +9,30 @@ internal class Program
     {
         #region Test Cases
         // Intersection Case
-        // var rectangle1 = new Rectangle()
-        // {
-        //     BottomLeftCorner = new Coordinates() { X = 1, Y = 1 },
-        //     TopRightCorner = new Coordinates() { X = 3, Y = 3 }
-        // };
-
-        // var rectangle2 = new Rectangle()
-        // {
-        //     BottomLeftCorner = new Coordinates() { X = 0, Y = 0 },
-        //     TopRightCorner = new Coordinates() { X = 2, Y = 2 }
-        // };
-
-        // Containment Case
         var rectangle1 = new Rectangle()
         {
-            BottomLeftCorner = new Coordinates() { X = 2, Y = 2 },
+            BottomLeftCorner = new Coordinates() { X = 2, Y = 1 },
             TopRightCorner = new Coordinates() { X = 6, Y = 4 }
         };
 
         var rectangle2 = new Rectangle()
         {
-            BottomLeftCorner = new Coordinates() { X = 1, Y = 1 },
-            TopRightCorner = new Coordinates() { X = 7, Y = 5 }
-        };
+            BottomLeftCorner = new Coordinates() { X = 3, Y = 3 },
+            TopRightCorner = new Coordinates() { X = 7, Y = 6 }
+        };        
+
+        // Containment Case
+        // var rectangle1 = new Rectangle()
+        // {
+        //     BottomLeftCorner = new Coordinates() { X = 2, Y = 2 },
+        //     TopRightCorner = new Coordinates() { X = 6, Y = 4 }
+        // };
+
+        // var rectangle2 = new Rectangle()
+        // {
+        //     BottomLeftCorner = new Coordinates() { X = 1, Y = 1 },
+        //     TopRightCorner = new Coordinates() { X = 7, Y = 5 }
+        // };
 
         // Adjacent Case
         // var rectangle1 = new Rectangle()

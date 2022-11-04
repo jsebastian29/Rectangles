@@ -5,7 +5,7 @@ namespace Rectangles.Tests.Fakes;
 public class RectanglesContainmentFake
 {
     /// <summary>
-    /// Fake data for testing
+    /// Fake data for testing containment rectangles
     /// </summary>
     public static IEnumerable<object[]> FirstCaseData => new List<object[]>
     {
@@ -25,7 +25,7 @@ public class RectanglesContainmentFake
     };
 
     /// <summary>
-    /// Fake data for testing
+    /// Fake data for testing containment rectangles
     /// </summary>
     public static IEnumerable<object[]> SecondCaseData => new List<object[]>
     {

@@ -5,7 +5,7 @@ namespace Rectangles.Tests.Fakes;
 public class RectanglesWithoutAreaFake
 {
     /// <summary>
-    /// Fake data for testing
+    /// Fake data for testing rectangles without area
     /// </summary>
     public static IEnumerable<object[]> Data => new List<object[]>
     {

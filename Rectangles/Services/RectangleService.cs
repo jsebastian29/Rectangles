@@ -1,6 +1,7 @@
 namespace Rectangles.Services;
 
 using Rectangles.Models;
+using System.Text;
 
 public class RectangleService
 {
@@ -19,7 +20,8 @@ public class RectangleService
             return contaiment;
 
         if (string.IsNullOrWhiteSpace(contaiment) && intersection)
-            return "The Rectangles have intersection.";
+            return GetIntersectionPoints(rectangle1, rectangle2);
+        
         if (string.IsNullOrWhiteSpace(contaiment) && !intersection)
             return "The Rectangles are adjacents.";
 
@@ -61,7 +63,7 @@ public class RectangleService
     }
     
     /// <summary>
-    /// Checks if one there's a rectangle without area.
+    /// Checks if there's a rectangle without area.
     /// </summary>
     private bool IsRectangleWithoutArea(Rectangle rectangle1, Rectangle rectangle2)
     {
@@ -73,4 +75,42 @@ public class RectangleService
 
         return false;
     }
+
+    /// <summary>
+    /// Gets the new rectangle created by the intersection.
+    /// </summary>
+    private string GetIntersectionPoints(Rectangle rectangle1, Rectangle rectangle2)
+    {
+        var intersectionRectangle = new Rectangle()
+        {
+            BottomLeftCorner = new Coordinates()
+            {
+                X = Math.Max(rectangle1.BottomLeftCorner.X, rectangle2.BottomLeftCorner.X),
+                Y = Math.Max(rectangle1.BottomLeftCorner.Y, rectangle2.BottomLeftCorner.Y)
+            },
+            TopRightCorner = new Coordinates()
+            {
+                X = Math.Min(rectangle1.TopRightCorner.X, rectangle2.TopRightCorner.X),
+                Y = Math.Min(rectangle1.TopRightCorner.Y, rectangle2.TopRightCorner.Y)
+            },
+            TopLeftCorner = new Coordinates()
+            {
+                X = Math.Max(rectangle1.BottomLeftCorner.X, rectangle2.BottomLeftCorner.X),
+                Y = Math.Min(rectangle1.TopRightCorner.Y, rectangle2.TopRightCorner.Y)
+            },
+            BottomRightCorner = new Coordinates()
+            {
+                X = Math.Min(rectangle1.TopRightCorner.X, rectangle2.TopRightCorner.X),
+                Y = Math.Max(rectangle1.BottomLeftCorner.Y, rectangle2.BottomLeftCorner.Y)
+            },            
+        };
+
+        var result = new StringBuilder("The Rectangles have intersection in these points:\n");
+        result.AppendLine($"({intersectionRectangle.BottomLeftCorner.X},{intersectionRectangle.BottomLeftCorner.Y})");
+        result.AppendLine($"({intersectionRectangle.TopLeftCorner.X},{intersectionRectangle.TopLeftCorner.Y})");
+        result.AppendLine($"({intersectionRectangle.TopRightCorner.X},{intersectionRectangle.TopRightCorner.Y})");
+        result.AppendLine($"({intersectionRectangle.BottomRightCorner.X},{intersectionRectangle.BottomRightCorner.Y})");
+
+        return result.ToString();
+    }    
 }
