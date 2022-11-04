@@ -6,7 +6,7 @@ using System.Text;
 public class RectangleService
 {
     /// <summary>
-    /// Checks if rectangles have intersection
+    /// Checks if rectangles have intersection, containment or adjacency
     /// </summary>
     public string RectangleOperations(Rectangle rectangle1, Rectangle rectangle2)
     {
