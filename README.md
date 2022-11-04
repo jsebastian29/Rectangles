@@ -21,4 +21,9 @@ The exercise was solved using a .Net Console Application
 ## Solution
 * In order to validate if one rectangle is wholly conatined within another we need to check if the bottom left corner X and Y axis are greater than
 the bigger rectangle, and the top right corner X and Y axis are less than the bigger rectangle.
+
 ![plot](ContainmentRectangle.png)
+
+* In order to validate if the rectangles have intersections we need to ensure that one rectangle is not above or under or next to the other one.
+
+![plot](Intersection.png)
