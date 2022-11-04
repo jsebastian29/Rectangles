@@ -24,6 +24,11 @@ the bigger rectangle, and the top right corner X and Y axis are less than the bi
 
 ![plot](ContainmentRectangle.png)
 
-* In order to validate if the rectangles have intersections we need to ensure that one rectangle is not above or under or next to the other one.
+* In order to validate if the rectangles have intersections we need to ensure that one rectangle is not above or under or next to the other one. Also
+it's necessary to validate that the rectangles are not contained within each other.
 
 ![plot](Intersection.png)
+
+* Finally, if the rectangles are not contained within each other and don't have intersections it's because they are adjacents.
+
+![plot](Adjacents.png)
