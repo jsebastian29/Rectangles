@@ -29,6 +29,10 @@ it's necessary to validate that the rectangles are not contained within each oth
 
 ![plot](Intersection.png)
 
+
+
+![plot](Side_intersection.png)
+
 * Finally, if the rectangles are not contained within each other and don't have intersections it's because they are adjacents.
 
 ![plot](Adjacents.png)
